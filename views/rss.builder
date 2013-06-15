@@ -7,11 +7,13 @@ xml.rss :version => "2.0" do
 
     @tweets.each do |tweet|
       xml.item do
-        xml.title tweet.text
-        xml.description tweet.text
+        text = "#{@screen_name}: #{tweet.text}"
+        xml.title text
+        xml.description text
         xml.pubDate tweet.created_at.rfc822
-        xml.link "http://www.twitter.com/#{@screen_name}/status/#{tweet.id}"
-        xml.guid "http://www.twitter.com/#{@screen_name}/status/#{tweet.id}"
+        link = "http://www.twitter.com/#{@screen_name}/status/#{tweet.id}"
+        xml.link link
+        xml.guid link
       end
     end
   end
