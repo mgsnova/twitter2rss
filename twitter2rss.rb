@@ -9,7 +9,7 @@ get '/rss/:name' do
 end
 
 get '/rss/self/home_timeline' do
-  @tweets = Twitter.home_timeline
+  @tweets = Twitter.home_timeline(count: 200)
   @name_for_url = ""
   @screen_name = "home timeline"
   builder :rss
