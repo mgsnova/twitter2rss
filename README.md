@@ -1,6 +1,6 @@
 # twitter2rss
 
-twitter2rss is a [sinatra](http://www.sinatrarb.com/)-based ruby web-app for providing a rss feed of the timeline of a twitter user.
+twitter2rss is a [sinatra](http://www.sinatrarb.com/)-based ruby web-app for providing a rss feed of the timeline of a certain twitter user and the home timeline of the user whose credentials are used..
 
 Due to the retirement of the twitter api v1, it seems no longer possible to get a direct rss feed of a users timeline from twitter directly.
 
@@ -31,3 +31,5 @@ It's main aim is to run as a service on [heroku](http://www.heroku.com/) and be 
     TWITTER_OAUTH_TOKEN_SECRET
 
 * Now you should be able to retrieve the rss feed with url schema `http://<your_heroku_app_name>.herokuapp.com/rss/<twitter_user_name>` and add this url to a rss aggregator.
+
+* By requesting `http://<your_heroku_app_name>.herokuapp.com/rss/self/home_timeline` you will get the home timeline of the current user.
